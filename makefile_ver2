@@ -1,0 +1,18 @@
+#
+# makefile for proj6
+#ver 2 by Carlos Munoz 12/1/2014
+
+LIB     = /home/courses/cop4531p/fall14
+CPP     = $(LIB)/cpp
+TCPP    = $(LIB)/tcpp
+AREA51  = $(LIB)/area51
+PROJ    = .
+INCPATH = -I$(PROJ) -I$(TCPP) -I$(CPP)
+
+CC   = g++47 -std=c++11 -Wall -Wextra
+
+all: sortspy.x
+
+
+ssspy.x: $(PROJ)/ssspy.cpp $(CPP)/timer.cpp $(PROJ)/lsb.h $(PROJ)/msb.h $(PROJ)/qs3w.h
+        $(CC) $(INCPATH) $^ -o $@
